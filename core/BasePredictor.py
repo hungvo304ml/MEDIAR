@@ -88,7 +88,8 @@ class BasePredictor:
             if not (np.max(pred_mask) > 5):
                 print("[!Caution] Only %d Cells Detected!!!\n" % np.max(pred_mask))
 
-        file_name = image_name.split(".")[0]
+        file_name = image_name.rsplit(".", 1)[0]
+        print(f"Save {file_name}")
         file_name = file_name + "_label.tiff"
         file_path = os.path.join(output_dir, file_name)
 

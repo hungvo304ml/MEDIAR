@@ -131,6 +131,10 @@ def compute_masks(
             shape = resize if resize is not None else cellprob.shape
             mask = np.zeros(shape, np.uint16)
             p = np.zeros((len(shape), *shape), np.uint16)
+    else:
+        shape = resize if resize is not None else cellprob.shape
+        mask = np.zeros(shape, np.uint16)
+        p = np.zeros((len(shape), *shape), np.uint16)
 
     return mask, p
 
